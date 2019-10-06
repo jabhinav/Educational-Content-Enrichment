@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Enrichment</title>
+
+    <style>
+table, th, td{
+border:1px solid black;
+cellpadding: 30px;
+margin: 5px;
+}
+</style>
+    
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+  </head>
+  <body>
+      <!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <img src="{{ url_for('static', filename='ibmlogo.png') }}">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+          </nav> -->
+
+           <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+          <form action="{{ url_for('give_me_text') }}" method="post">
+            <div class="form-group">
+        <label for="comment">Enter Input Text:</label>
+        <textarea class="form-control" rows="7" id="comment" name="input_text"></textarea>
+                </div>  
+              <input type="submit" name="action" class="btn btn-info" style="width:360px" value="Extract Concepts"/>
+              <br/>
+              <br/>
+
+              </form> 
+              
+<form action="{{ url_for('test') }}" method="post">
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Extracted Concepts:</label>
+    <select class="form-control" name="exampleFormControlSelect1">
+      <option></option>
+    </select>
+  </div>
+              
+        
+          </div>
+          <div class="col-md-4">
+              <br/>
+          <!-- <button type="button" class="btn btn-info" style="width:360px">Extract Prerequisites</button> -->
+          <input type="submit" name="action" class="btn btn-info" style="width:360px" value="Extract Prerequisites" disabled="True" />
+              <br/><br/>
+              <img style="width:360px;height:300px" src="{{ url_for('static', filename='model.jpeg') }}">
+              <!-- <div class="panel panel-default" style="width:360px;height:300px">
+  <div class="panel-body"></div>
+              </div> -->
+          </div>
+          
+          <div class="col-md-4">
+              <br/>
+          <input type="submit" name="action" class="btn btn-info" style="width:360px" value="Extract Definition" disabled="True"/>
+          
+              <br/><br/>
+              <div class="panel panel-default" style="width:360px;height:150px;margin-bottom:0px;overflow-y:scroll">
+      <div class="panel-body">Showing your results here!!</div>
+                  </div>
+                  <br/>
+                  <input type="submit" name="action" class="btn btn-info" style="width:360px" value="Extract Application" disabled="True"/>
+                  <br/><br/>
+              <div class="panel panel-default" style="width:360px;height:150px;margin-top:0px;overflow-y:scroll">
+  <div class="panel-body">Showing your results here!!</div>
+</div>
+          </div>
+          </div>
+   <!--        <br/> -->
+          <hr>
+          <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+
+              <center><h2>Feedback</h2></center>
+
+              <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Prerequisite Graph</th>
+      <th>Defintion Enrichment</th>
+      <th>Application Enrichment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><input class="form-check-input" type="radio" name="pq" value="ba">Below Average</td>
+      <td><input class="form-check-input" type="radio" name="der" value="op1">Enrichment needed and not provided</td>
+      <td><input class="form-check-input" type="radio" name="aer" value="op1">Enrichment needed and not provided</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><input class="form-check-input" type="radio" name="pq" value="a">Average</td>
+      <td><input class="form-check-input" type="radio" name="der" value="op2">Enrichment needed and also provided</td>
+      <td><input class="form-check-input" type="radio" name="aer" value="op2">Enrichment needed and not provided</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><input class="form-check-input" type="radio" name="pq" value="g">Good</td>
+      <td><input class="form-check-input" type="radio" name="der" value="op3">Enrichment not needed but provided</td>
+      <td><input class="form-check-input" type="radio" name="aer" value="op3">Enrichment needed and not provided</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td><input class="form-check-input" type="radio" name="pq" value="e">Excellent</td>
+      <td><input class="form-check-input" type="radio" name="der" value="op4">Enrichment not needed and not provided</td>
+      <td><input class="form-check-input" type="radio" name="aer" value="op4">Enrichment needed and not provided</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <div class="media-body">
+    <input type="submit" name="action" class="btn btn-info" style="margin-left:16.5em" value="Submit Feedback" disabled="True" />
+  </div>
+</div>
+
+        
+              </div>
+              <div class="col-md-2"></div>
+          </div>  
+              
+    
+               </div>
+           </form>   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--  <script src="js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+  </body>
+</html>

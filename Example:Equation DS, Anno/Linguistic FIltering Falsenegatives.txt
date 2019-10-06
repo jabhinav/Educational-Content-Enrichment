@@ -1,0 +1,42 @@
+Algorithms:
+
+
+Newtons Method
+Rabin Karp
+Implicit graph
+DAG
+
+-x-
+
+Linear Algebra:
+
+
+Principal Diagonal
+Coefficient
+Vector space
+Symmetric group
+
+-x-
+
+Physics:
+
+
+Charge
+Field
+Energy storage
+Exponential decay
+Magnetic compass
+Ampere's Law
+Curl
+Force
+Right hand thumb rule
+
+-x-
+
+Chemistry:
+
+
+Desorption
+Suspension
+Zeolite
+Isotherm

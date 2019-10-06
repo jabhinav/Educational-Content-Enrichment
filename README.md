@@ -1,1 +1,1 @@
-# EducationEnrichment
+# Education Enrichment

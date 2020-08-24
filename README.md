@@ -5,7 +5,7 @@ Application and System Evaluation dataset link: https://worksheets.codalab.org/b
 
 
 ## Citation
- If you use the dataset and research from our papers for further research, consider citing:
+ If you use the dataset and our paper for further research, consider citing:
  
 [1] A Jain, N Gupta, S Mujumdar, S Mehta, R Madhok, “Content Driven Enrichment of Formal Text using Concept Definitions and Applications,” in Proceedings of the 29th on Hypertext and Social Media, Baltimore, Maryland, Aug 2018.
 
